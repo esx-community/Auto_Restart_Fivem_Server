@@ -22,7 +22,8 @@ screen -x fxserver -X stuff 'cd /home/fxserver/server-data/
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 ```
 # Nota:
-Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ par le user que vous utiliser ainsi que le nom du screen (screen -x nomduscreen).
+- Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ 
+- Vous devez modifier le nom du screen (screen -x nomduscreen).
 
 Pour information la commande 'screen -x nomscreen -X stuff' va permettre de lancer une commande dans le screen.
 
