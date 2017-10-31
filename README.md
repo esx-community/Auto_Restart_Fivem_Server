@@ -27,6 +27,7 @@ Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ par le user 
 Pour information la commande 'screen -x nomscreen -X stuff' va permettre de lancer une commande dans le screen.
 
 Le fichier script est disponible ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
+Mettre le script dans votre /home/nomuser
 
 # Ajout des horaires du restart serveur et log
 Accéder au crontab via la commande: 'crontab -e'
