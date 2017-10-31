@@ -53,6 +53,7 @@ vi /etc/sudoers
 
 Et ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
 ```
+#Cmnd alias specification
 fxserver ALL= NOPASSWD:/usr/sbin/service mysql restart
 ````
 Modifier le nom fxserver par votre user
