@@ -53,8 +53,10 @@ vi /etc/sudoers
 
 Et ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
 ```
-NomUser ALL= NOPASSWD:/usr/sbin/service mysql restart
+fxserver ALL= NOPASSWD:/usr/sbin/service mysql restart
 ````
+Modifier le nom fxserver par votre user
+
 *Pour vérifier l'enregistrement: cat /etc/sudoers*
 
 # Création du journal de log
