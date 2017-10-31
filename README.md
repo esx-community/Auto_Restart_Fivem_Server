@@ -10,15 +10,18 @@ Nous verrons aussi la création d'un journal pour loguer les restarts du serveur
 echo "***********************************************************"
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Arrêt du serveur..."
 kill -9 `ps -ef | grep "/home/fxserver/proot" | grep -v grep | awk '{print $2}'`
-echo `date '+%d-%B-%Y_%H:%M:%S'`" - Redémarrage de Mysql..."
+sleep 2
+echo `date '+%d-%B-%Y_%H:%M:%S'`" - Redémarrage de mysql..."
 sudo service mysql restart
 sleep 10
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Nettoyage du cache..."
 rm -R /home/fxserver/server-data/cache/
+sleep 2
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Démarrage du serveur..."
 screen -x fxserver -X stuff 'cd /home/fxserver/server-data/
 /home/fxserver/run.sh +exec server.cfg
 '
+sleep 10
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 ```
 # Nota:
@@ -30,7 +33,7 @@ Pour information la commande 'screen -x nomscreen -X stuff' va permettre de lanc
 Le fichier script est disponible ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
 Mettre le script dans votre /home/nomuser
 
-# Ajout des horaires du restart serveur et log
+# Ajout des horaires et log
 Accéder au crontab via la commande: 'crontab -e'
 
 *pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
