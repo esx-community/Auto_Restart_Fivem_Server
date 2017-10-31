@@ -1,4 +1,4 @@
-# RestartFivemServer
+# Automatic Restart FiveM Server
 
 Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires définis tout en prenant en compte le screen crée.
 
