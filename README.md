@@ -30,8 +30,8 @@ Le fichier script est disponible ici => 'https://github.com/tracid56/restartFive
 Accéder au crontab via la commande: 'crontab -e'
 *pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
 
-00 14 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
-00 02 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
+'00 14 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
+00 02 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog'
 
 *pour vérifier l'enregistrement des tâches*:
 fxserver@vps-26798:~$ crontab -l
