@@ -84,13 +84,13 @@ Ajouter dans le fichier fxreload:
 ```
 *Pour vérifier l'enregistrement:' cat /etc/logrotate.d/fxreload'*
 
-# Regarder le fichier de log:
+# Consulter le fichier de log:
 ```
 cat /var/log/fxreload/fxreloadlog
 ```
 
 # Conclusion
-Une fois toutes ces étapes terminées, vous votre serveur redémarrera automatiquement à 14h et 02 tout en journalisant ces données dans votre fichier de log.
+Une fois toutes ces étapes terminées, vous votre serveur redémarrera automatiquement à 14h et 02h tout en journalisant ces données dans votre fichier de log.
 
 
 
