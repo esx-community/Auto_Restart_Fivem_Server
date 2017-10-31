@@ -3,6 +3,7 @@
 Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires définis tout en prenant en compte le screen crée.
 
 Nous verrons aussi la création d'un journal pour loguer les restarts du serveur Fivem.
+#Attention: les syntaxes utilisées sont compatibles Debian 8, je n'ai pas tester sous d'autres distributions Linux.
 
 # Script
 ```bash
