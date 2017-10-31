@@ -1,4 +1,3 @@
-```
 #!/bin/bash
 echo "***********************************************************"
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Arrêt du serveur..."
@@ -16,4 +15,3 @@ screen -x fxserver -X stuff 'cd /home/fxserver/server-data/
 '
 sleep 10
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
-```
