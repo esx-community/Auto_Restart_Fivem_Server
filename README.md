@@ -1,9 +1,10 @@
 # RestartFivemServer
 
 Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires définis tout en prennant en compte le screen crée.
+
 Nous verrons aussi la création d'un journal pour loguer les restarts du serveur Fivem.
 
-# Script pour restart le serveur FiveM avec prise en charge du screen:
+# Script:
 ```bash
 #!/bin/bash
 echo "***********************************************************"
