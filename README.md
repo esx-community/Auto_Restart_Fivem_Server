@@ -87,6 +87,8 @@ Ajouter dans le fichier fxreload:
 cat /var/log/fxreload/fxreloadlog
 ```
 
+# Conclusion
+Une fois toutes ces étapes terminées, vous votre serveur redémarrera automatiquement à 14h et 02 tout en journalisant ces données dans votre fichier de log.
 
 
 
