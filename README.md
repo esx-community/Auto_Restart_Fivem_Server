@@ -24,7 +24,7 @@ echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 # Nota:
 Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ par le user que vous utiliser ainsi que le nom du screen (screen -x nomduscreen).
 
-Le script est directement téléchargeable ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
+Le fichier script est disponible ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
 
 # Ajouter les créneaux du restart serveur
 Accéder au crontab via la commande: 'crontab -e'
