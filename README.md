@@ -1,6 +1,6 @@
 # RestartFivemServer
 
-Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires définis tout en prennant en compte le screen crée.
+Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires définis tout en prenant en compte le screen crée.
 
 Nous verrons aussi la création d'un journal pour loguer les restarts du serveur Fivem.
 
@@ -24,9 +24,11 @@ echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 # Nota:
 Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ par le user que vous utiliser ainsi que le nom du screen (screen -x nomduscreen).
 
+Pour information la commande 'screen -x nomscreen -X stuff' va permettre de lancer une commande dans le screen.
+
 Le fichier script est disponible ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
 
-# Ajouter les créneaux du restart serveur
+# Ajout des horaires du restart serveur et log
 Accéder au crontab via la commande: 'crontab -e'
 
 *pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
@@ -36,12 +38,13 @@ Accéder au crontab via la commande: 'crontab -e'
 00 02 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
 ```
 
-*pour vérifier l'enregistrement des tâches*:
-fxserver@vps-26798:~$ crontab -l
+*pour vérifier l'enregistrement des tâches*: 'crontab -l'
 
-# Ajouter les droits au compte fxserver pour restart MySQL
-Il faut editer le fichier sudoers via le compte root et ajouter la ligne avec le nom du user que vous utiliser
+# Ajouter les droits au compte User pour restart MySQL
+Il faut editer le fichier sudoers via root et ajouter la ligne avec le nom du user que vous utiliser:
+
 Commande: 'vi /etc/sudoers'
+
 Puis ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
 
 'fxserver ALL= NOPASSWD:/usr/sbin/service mysql restart'
@@ -49,10 +52,10 @@ Puis ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
 *pour vérifier l'enregistrement cat /etc/sudoers*
 
 # Création du journal de log des restarts:
-Via Root, entrer les commandes suivantes:
+En Root, entrer les commandes suivantes qui permettront de créer un fichier de log, mettre les droits, paramétrer les logs.
 
-'mkdir /var/log/fxreload'
-'chown -R fxserver:fxserver /var/log/fxreload/'
+'mkdir /var/log/fxreload' 
+'chown -R fxserver:fxserver /var/log/fxreload/' (ici modifier le user fxserver par votre user)
 'vi /etc/logrotate.d/fxreload'
 
 Ajouter dans le fichier:
