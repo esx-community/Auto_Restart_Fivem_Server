@@ -4,7 +4,7 @@ Ce script va vous permettre de redémarrer votre serveur FiveM aux horaires déf
 
 Nous verrons aussi la création d'un journal pour loguer les restarts du serveur Fivem.
 
-# Script:
+# Script
 ```bash
 #!/bin/bash
 echo "***********************************************************"
@@ -24,7 +24,7 @@ screen -x fxserver -X stuff 'cd /home/fxserver/server-data/
 sleep 10
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 ```
-# Nota:
+# Nota
 - Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ 
 - Vous devez modifier le nom du screen (screen -x nomduscreen).
 
@@ -34,36 +34,37 @@ Le fichier script est disponible ici => 'https://github.com/tracid56/restartFive
 Mettre le script dans votre /home/nomuser
 
 # Ajout des horaires et log
-Accéder au crontab via la commande: 'crontab -e'
+En root, accéder au crontab via la commande: 'crontab -e'
 
-*pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
+*Pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
 
 ```bash
 00 14 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
 00 02 * * * /home/fxserver/reload_fxserver.sh >> /var/log/fxreload/fxreloadlog
 ```
 
-*pour vérifier l'enregistrement des tâches*: 'crontab -l'
+*Pour vérifier l'enregistrement:* 'crontab -l'
 
-# Ajouter les droits au compte User pour restart MySQL
-Il faut editer le fichier sudoers via root et ajouter la ligne avec le nom du user que vous utiliser:
+# Ajout des droits au compte User pour restart MySQL
+En root, il faut editer le fichier sudoers via:
 
-Commande: 'vi /etc/sudoers'
+vi /etc/sudoers
 
-Puis ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
+Et ajouter en dessous de '#Cmnd alias specification' la ligne suivante:
+```
+NomUser ALL= NOPASSWD:/usr/sbin/service mysql restart
+````
+*Pour vérifier l'enregistrement: cat /etc/sudoers*
 
-'fxserver ALL= NOPASSWD:/usr/sbin/service mysql restart'
-
-*pour vérifier l'enregistrement cat /etc/sudoers*
-
-# Création du journal de log des restarts:
+# Création du journal de log
 En Root, entrer les commandes suivantes qui permettront de créer un fichier de log, mettre les droits, paramétrer les logs.
+```
+mkdir /var/log/fxreload
+chown -R fxserver:fxserver /var/log/fxreload/ (ici modifier le user fxserver par votre user)
+vi /etc/logrotate.d/fxreload
+```
 
-'mkdir /var/log/fxreload' 
-'chown -R fxserver:fxserver /var/log/fxreload/' (ici modifier le user fxserver par votre user)
-'vi /etc/logrotate.d/fxreload'
-
-Ajouter dans le fichier:
+Ajouter dans le fichier fxreload:
 ```
 /var/log/fxreload/fxreloadlog
 {
@@ -75,10 +76,12 @@ Ajouter dans le fichier:
         compress
 }
 ```
-*Pour vérifier l'enregistrement: 'cat /etc/logrotate.d/fxreload'*
+*Pour vérifier l'enregistrement:' cat /etc/logrotate.d/fxreload'*
 
 # Regarder le fichier de log:
-'cat /var/log/fxreload/fxreloadlog'
+```
+cat /var/log/fxreload/fxreloadlog
+```
 
 
 
