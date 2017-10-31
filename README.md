@@ -31,6 +31,7 @@ echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 Pour information la commande 'screen -x nomscreen -X stuff' va permettre de lancer une commande dans le screen.
 
 Le fichier script est disponible ici => 'https://github.com/tracid56/restartFivemserver/blob/master/reload_fxserver.sh'
+
 Mettre le script dans votre /home/nomuser
 
 # Ajout des horaires et log
