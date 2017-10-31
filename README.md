@@ -10,7 +10,7 @@ Nous verrons aussi la création d'un journal pour loguer les restarts du serveur
 echo "***********************************************************"
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Arrêt du serveur..."
 kill -9 `ps -ef | grep "/home/fxserver/proot" | grep -v grep | awk '{print $2}'`
-echo `date '+%d-%B-%Y_%H:%M:%S'`" - Redémarrage de mysql..."
+echo `date '+%d-%B-%Y_%H:%M:%S'`" - Redémarrage de Mysql..."
 sudo service mysql restart
 sleep 10
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Nettoyage du cache..."
@@ -22,7 +22,7 @@ screen -x fxserver -X stuff 'cd /home/fxserver/server-data/
 echo `date '+%d-%B-%Y_%H:%M:%S'` " - Fin de la procédure"
 ```
 # Nota:
-Vous devez modifier le user 'fxserver' par le user que vous utiliser  ainsi que le nom du screen (screen -x nomduscreen)
+Vous devez modifier le user 'fxserver'dans le chemin /home/nomuser/ par le user que vous utiliser ainsi que le nom du screen (screen -x nomduscreen)
 
 # Ajouter les créneaux du restart serveur
 Accéder au crontab via la commande: 'crontab -e'
