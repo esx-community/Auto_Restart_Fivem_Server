@@ -37,7 +37,7 @@ Le fichier script est disponible ici => 'https://github.com/tracid56/restartFive
 Mettre le script dans votre /home/nomuser
 
 # Ajout des horaires et log
-En root, accéder au crontab via la commande: 'crontab -e'
+Accéder au crontab via la commande: 'crontab -e'
 
 *Pour cet exemple nous allons restart le serveur tout les jours à 14h et 02h*
 
