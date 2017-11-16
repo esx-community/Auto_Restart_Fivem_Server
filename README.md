@@ -36,6 +36,12 @@ Le fichier script est disponible ici => 'https://github.com/tracid56/restartFive
 
 Mettre le script dans votre /home/nomuser
 
+Puis rendre le script exécutable:
+
+```
+chmod +x script_a_executer.sh
+````
+
 # Ajout des horaires et log
 Accéder au crontab via la commande: 'crontab -e'
 
